@@ -135,3 +135,10 @@
   background: radial-gradient(circle at 85% 20%, rgba(45, 52, 128, 0.25) 0%, rgba(13, 13, 26, 0) 60%),
               radial-gradient(circle at 65% 75%, rgba(245, 166, 35, 0.12) 0%, rgba(13, 13, 26, 0) 50%);
 }
+
+
+/* Hardware accelerated smooth atmosphere gradients */
+.hero-radial-glow {
+  background: radial-gradient(circle at 85% 20%, rgba(45, 52, 128, 0.25) 0%, rgba(13, 13, 26, 0) 60%),
+              radial-gradient(circle at 65% 75%, rgba(245, 166, 35, 0.12) 0%, rgba(13, 13, 26, 0) 50%);
+}

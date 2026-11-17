@@ -38,8 +38,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Manrope"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Manrope"', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
         mono: ['"Space Mono"', 'monospace'],
       },
