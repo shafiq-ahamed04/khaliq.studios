@@ -8,7 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 25);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,50 +25,52 @@ export default function Navbar() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#0D0D1A]/95 backdrop-blur-md border-b border-[#2D3480]/50 py-3.5 sm:py-4 shadow-xl' 
-          : 'bg-transparent py-4 sm:py-6 border-b border-white/5'
+          ? 'bg-[#0D0D1A]/90 backdrop-blur-md py-3.5 shadow-lg' 
+          : 'bg-transparent py-5 sm:py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
-        {/* Brand Logo with Official Uploaded Emblem */}
+        {/* Brand Logo */}
         <CircuitHouseLogo theme="dark" size="md" />
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
+        {/* Desktop Nav Links with Atelier Hairline Underline Animation */}
+        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs sm:text-sm uppercase tracking-[0.2em] font-mono-code font-semibold text-[#B0B0C4] hover:text-[#F5A623] transition-colors relative py-1 group"
+              className="nav-link text-[13.5px] font-medium tracking-[-0.01em] text-[#C0C0D0] hover:text-[#FFFFFF] transition-colors py-1"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#F5A623] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
-        {/* Right Action: Professional High-Conversion Contact CTA */}
+        {/* Right Action: Shadcn-style Editorial Button */}
         <div className="hidden sm:flex items-center gap-4">
           <a
-            href="https://wa.me/917845301134?text=Hi%20Khaliq%20Studios,%20I%20would%20like%20to%20start%20a%20project."
+            href="https://wa.me/917845301134?text=Hi%20Khaliq%20Studios,%20I%20would%20like%20to%20discuss%20a%20new%20project."
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623] hover:text-[#0D0D1A] transition-all duration-200 text-xs sm:text-sm font-mono-code uppercase tracking-[0.2em] font-bold"
+            className="btn-shadcn-outline !py-2.5 !px-5 text-xs font-semibold rounded-xl border-white/20 hover:border-white"
           >
             <span>Start a Project</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#F5F4F0] hover:text-[#F5A623] border border-[#2D3480]/60 active:bg-[#2D3480]/20"
+          className="md:hidden p-2 text-[#F5F4F0] hover:text-[#F5A623] rounded-lg border border-white/10"
           aria-label="Toggle navigation menu"
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
+
+      {/* Atelier Fine Header Rule */}
+      <div className="w-full h-[1px] bg-white/10 mt-3 sm:mt-4" />
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
@@ -78,7 +80,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="font-editorial text-2xl text-[#F5F4F0] hover:text-[#F5A623] transition-colors border-b border-[#2D3480]/30 pb-3"
+              className="text-xl font-medium text-[#F5F4F0] hover:text-[#F5A623] transition-colors border-b border-white/10 pb-3"
             >
               {link.label}
             </a>
@@ -89,7 +91,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3.5 bg-[#F5A623] text-[#0D0D1A] font-bold text-xs sm:text-sm uppercase tracking-[0.2em] font-mono-code active:bg-[#ffb947]"
+              className="btn-shadcn-primary w-full text-center py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider"
             >
               WhatsApp Us (+91 78453 01134)
             </a>
@@ -98,7 +100,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3.5 border border-white/30 text-white font-bold text-xs sm:text-sm uppercase tracking-[0.2em] font-mono-code hover:bg-white/10"
+              className="btn-shadcn-outline w-full text-center py-3.5 rounded-xl text-xs uppercase tracking-wider"
             >
               Instagram @khaliq.studios
             </a>

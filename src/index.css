@@ -3,42 +3,31 @@
 @tailwind utilities;
 
 @layer base {
-
-  /* Non-negotiable: Zero rounded corners anywhere */
-  *,
-  *::before,
-  *::after {
-    border-radius: 0 !important;
-  }
-
   html {
     scroll-behavior: auto;
-    /* Managed by Lenis for ultra-fluid inertia */
     background-color: #0D0D1A;
     color: #F5F4F0;
-    font-size: 16px;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Clean, discreet standard scrollbar */
+  /* Discreet studio scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
-
   ::-webkit-scrollbar-track {
     background: #0D0D1A;
   }
-
   ::-webkit-scrollbar-thumb {
     background: #2D3480;
+    border-radius: 3px;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     background: #F5A623;
   }
@@ -49,17 +38,105 @@
   }
 }
 
-/* Luxury Editorial Typography utilities */
-.font-editorial {
-  font-family: 'Playfair Display', Cormorant Garamond, Georgia, serif;
+/* Atelier-style Editorial Navigation Hover Underline */
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
 }
 
-.font-editorial-alt {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #F5A623;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.font-mono-code {
-  font-family: 'Space Mono', monospace;
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Atelier-style Studio Badges & Pills */
+.studio-pill {
+  letter-spacing: 0.02em;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.studio-pill-dark {
+  color: #D0D0DC;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.studio-pill-light {
+  color: #2D3480;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(45, 52, 128, 0.15);
+}
+
+/* Shadcn-Style Editorial Buttons */
+.btn-shadcn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #F5A623;
+  color: #0D0D1A;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-shadcn-primary:hover {
+  background-color: #FFB947;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.3);
+}
+
+.btn-shadcn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-shadcn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: transparent;
+  color: #F5F4F0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shadcn-outline:hover {
+  background-color: #FFFFFF;
+  color: #0D0D1A;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.btn-shadcn-outline:active {
+  transform: translateY(0);
 }
 
 /* Subtle Film Grain Texture Overlay */
@@ -71,37 +148,14 @@
   height: 100vh;
   pointer-events: none;
   z-index: 999;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Hero subtle diagonal gradient bleeding from bottom-right */
-.hero-gradient-bleed {
-  background: radial-gradient(circle at 100% 100%, rgba(245, 166, 35, 0.08) 0%, rgba(45, 52, 128, 0.12) 35%, rgba(13, 13, 26, 0) 70%);
-}
-
-/* Gentle scroll prompt animation (subtle bounce, no aim crosshair) */
-@keyframes subtleBounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(4px);
-  }
-}
-
-.animate-subtle-bounce {
-  animation: subtleBounce 2s ease-in-out infinite;
-}
-
-@keyframes progress {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+/* Hero Background Shader */
+.hero-shade-atelier {
+  pointer-events: none;
+  background: linear-gradient(rgba(13, 13, 26, 0.6) 0%, rgba(13, 13, 26, 0.15) 35%, rgba(13, 13, 26, 0.95) 100%);
+  position: absolute;
+  inset: 0;
 }

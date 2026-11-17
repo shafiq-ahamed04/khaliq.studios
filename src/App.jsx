@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import IntroImpact from './components/IntroImpact';
 import Services from './components/Services';
 import SelectedWork from './components/SelectedWork';
 import Philosophy from './components/Philosophy';
@@ -18,7 +19,7 @@ export default function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
+    // Lenis smooth inertia scrolling
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -45,34 +46,37 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#0D0D1A] text-[#F5F4F0] selection:bg-[#F5A623] selection:text-[#0D0D1A]">
-      {/* Subtle Analog Film Grain */}
+      {/* Subtle Analog Texture */}
       <div className="film-grain" />
 
-      {/* Cinematic Studio Shutter Preloader with Real Logo */}
+      {/* Studio Shutter Preloader */}
       <Preloader onComplete={() => setPreloaderDone(true)} />
 
-      {/* Luxury Navigation Header */}
+      {/* Atelier-Style Header */}
       <Navbar />
 
-      {/* Main Agency Sections */}
+      {/* Main Studio Narrative */}
       <main className="relative z-10 flex flex-col">
-        {/* 1. HERO (Dark #0D0D1A) */}
+        {/* 1. HERO (Full Bleed Editorial Layout with 4-Column Studio Metadata) */}
         <Hero />
 
-        {/* 2. SERVICES (Off-White #F5F4F0) */}
+        {/* 2. WHO WE ARE & OUR IMPACT (Atelier Statement & Impact Grid) */}
+        <IntroImpact />
+
+        {/* 3. WHAT WE DO BEST / SERVICES (Interactive Capability Deck) */}
         <Services />
 
-        {/* 3. SELECTED WORK (Near-Black #0D0D1A) */}
+        {/* 4. SELECTED WORK (Editorial Project Rows with Live Deployments) */}
         <SelectedWork />
 
-        {/* 4. PHILOSOPHY / WHY KHALIQ STUDIOS (Off-White #F5F4F0) */}
+        {/* 5. PHILOSOPHY (We Don't Build Pages, We Build Systems) */}
         <Philosophy />
 
-        {/* 5. CONTACT (Near-Black #0D0D1A) */}
+        {/* 6. CONTACT (Editorial Large CTA Card) */}
         <Contact />
       </main>
 
-      {/* 6. FOOTER (Minimal Dark) */}
+      {/* 7. FOOTER */}
       <Footer />
     </div>
   );
