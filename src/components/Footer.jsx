@@ -3,7 +3,9 @@ import CircuitHouseLogo from './CircuitHouseLogo';
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#0D0D1A] text-[#F5F4F0] overflow-hidden">
+    <footer 
+      data-theme="dark"
+      className="relative w-full bg-[#0D0D1A] text-[#F5F4F0] overflow-hidden">
       {/* Center: thin amber line separator above footer only */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-7xl px-5 sm:px-8 lg:px-12">

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layers, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export default function IntroImpact() {
   const stats = [
@@ -25,7 +24,11 @@ export default function IntroImpact() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F6F4EE] text-[#1B1B1B] py-24 sm:py-32 lg:py-36 border-t border-[#1B1B1B]/10">
+    <section 
+      data-theme="light"
+      id="intro"
+      className="relative w-full bg-[#F6F4EE] text-[#1B1B1B] py-20 sm:py-28 lg:py-32 border-t border-[#1B1B1B]/10"
+    >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         
         {/* Intro Top Header with Atelier Pill */}
@@ -36,17 +39,17 @@ export default function IntroImpact() {
           </div>
         </div>
 
-        {/* Big Editorial Statement Headline with highlighted words */}
-        <div className="max-w-4xl mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-[-0.04em] leading-[1.12] text-[#1B1B1B]">
-            We're not just developers. We're{" "}
-            <span className="underline decoration-[#F5A623] decoration-2 underline-offset-4 text-[#2D3480]">listeners</span>,{" "}
-            <span className="underline decoration-[#2D3480] decoration-2 underline-offset-4 text-[#2D3480]">architects</span>, and believers that your website and workflows should work for your business — not the other way around. Every project starts the same way: we sit down, we listen, we learn your operations.
+        {/* Shortened, Full Horizontal High-Impact Manifesto Statement */}
+        <div className="w-full mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-medium tracking-[-0.04em] leading-[1.1] text-[#1B1B1B] w-full">
+            We build digital systems that move your business forward — engineered for{" "}
+            <span className="underline decoration-[#F5A623] decoration-[3px] underline-offset-8 text-[#2D3480]">speed</span>,{" "}
+            <span className="underline decoration-[#2D3480] decoration-[3px] underline-offset-8 text-[#2D3480]">conversion</span>, and effortless operations.
           </h2>
         </div>
 
-        {/* 3 Pillar Value Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-20 sm:mb-28">
+        {/* 3 Pillar Value Cards - Full Horizontal Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-24">
           {highlights.map((item, idx) => (
             <div 
               key={item.title}
@@ -67,22 +70,22 @@ export default function IntroImpact() {
           ))}
         </div>
 
-        {/* Our Impact Section (Atelier Impact Grid) */}
-        <div className="pt-12 border-t border-[#1B1B1B]/10">
-          <div className="mb-8">
+        {/* Our Impact Section (Full Horizontal Grid) */}
+        <div className="pt-10 border-t border-[#1B1B1B]/10">
+          <div className="mb-6">
             <div className="studio-pill studio-pill-light">
               <span className="text-[#2D3480]">↗</span>
               <span className="tracking-[0.05em] uppercase font-mono-code text-[11px] font-semibold">Our Impact</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat) => (
               <div 
                 key={stat.label}
                 className="p-6 sm:p-8 bg-white border border-[#1B1B1B]/10 rounded-2xl flex flex-col justify-between"
               >
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#2D3480] mb-2">
+                <div className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-[#2D3480] mb-2">
                   {stat.num}
                 </div>
                 <div className="text-xs sm:text-sm font-medium text-[#5A5A6E] tracking-[-0.01em]">

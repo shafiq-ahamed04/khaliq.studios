@@ -77,7 +77,7 @@
 
 .studio-pill-dark {
   color: #D0D0DC;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -123,39 +123,15 @@
   font-weight: 600;
   border-radius: 12px;
   background-color: transparent;
-  color: #F5F4F0;
-  border: 1px solid rgba(255, 255, 255, 0.22);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-shadcn-outline:hover {
-  background-color: #FFFFFF;
-  color: #0D0D1A;
-  border-color: #FFFFFF;
-  transform: translateY(-1px);
 }
 
 .btn-shadcn-outline:active {
   transform: translateY(0);
 }
 
-/* Subtle Film Grain Texture Overlay */
-.film-grain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Hero Background Shader */
-.hero-shade-atelier {
-  pointer-events: none;
-  background: linear-gradient(rgba(13, 13, 26, 0.6) 0%, rgba(13, 13, 26, 0.15) 35%, rgba(13, 13, 26, 0.95) 100%);
-  position: absolute;
-  inset: 0;
+/* Hardware accelerated smooth atmosphere gradients */
+.hero-radial-glow {
+  background: radial-gradient(circle at 85% 20%, rgba(45, 52, 128, 0.25) 0%, rgba(13, 13, 26, 0) 60%),
+              radial-gradient(circle at 65% 75%, rgba(245, 166, 35, 0.12) 0%, rgba(13, 13, 26, 0) 50%);
 }

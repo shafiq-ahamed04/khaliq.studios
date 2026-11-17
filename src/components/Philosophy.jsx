@@ -21,6 +21,7 @@ export default function Philosophy() {
 
   return (
     <section 
+      data-theme="light"
       id="philosophy"
       className="relative w-full bg-[#F6F4EE] text-[#1B1B1B] py-28 sm:py-36 lg:py-40 border-t border-[#1B1B1B]/10"
     >

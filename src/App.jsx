@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
@@ -13,70 +11,64 @@ import Philosophy from './components/Philosophy';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
 
   useEffect(() => {
-    // Lenis smooth inertia scrolling
+    // Ultra-optimized, zero-lag 60/120fps inertia scrolling with Lenis
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.9,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
-
-    const updateTicker = (time) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    let animationFrameId;
+    function raf(time) {
+      lenis.raf(time);
+      animationFrameId = requestAnimationFrame(raf);
+    }
+    animationFrameId = requestAnimationFrame(raf);
 
     return () => {
-      gsap.ticker.remove(updateTicker);
+      cancelAnimationFrame(animationFrameId);
       lenis.destroy();
     };
   }, []);
 
   return (
     <div className="relative min-h-screen bg-[#0D0D1A] text-[#F5F4F0] selection:bg-[#F5A623] selection:text-[#0D0D1A]">
-      {/* Subtle Analog Texture */}
-      <div className="film-grain" />
-
-      {/* Studio Shutter Preloader */}
+      {/* Studio Preloader */}
       <Preloader onComplete={() => setPreloaderDone(true)} />
 
-      {/* Atelier-Style Header */}
+      {/* Dynamic Section-Aware Navbar */}
       <Navbar />
 
       {/* Main Studio Narrative */}
       <main className="relative z-10 flex flex-col">
-        {/* 1. HERO (Full Bleed Editorial Layout with 4-Column Studio Metadata) */}
+        {/* 1. HERO (Dark #0D0D1A) */}
         <Hero />
 
-        {/* 2. WHO WE ARE & OUR IMPACT (Atelier Statement & Impact Grid) */}
+        {/* 2. WHO WE ARE & OUR IMPACT (Light #F6F4EE) */}
         <IntroImpact />
 
-        {/* 3. WHAT WE DO BEST / SERVICES (Interactive Capability Deck) */}
+        {/* 3. WHAT WE DO BEST / SERVICES (Light #EEEAE1) */}
         <Services />
 
-        {/* 4. SELECTED WORK (Editorial Project Rows with Live Deployments) */}
+        {/* 4. SELECTED WORK (Dark #0D0D1A) */}
         <SelectedWork />
 
-        {/* 5. PHILOSOPHY (We Don't Build Pages, We Build Systems) */}
+        {/* 5. PHILOSOPHY (Light #F6F4EE) */}
         <Philosophy />
 
-        {/* 6. CONTACT (Editorial Large CTA Card) */}
+        {/* 6. CONTACT (Dark #0D0D1A) */}
         <Contact />
       </main>
 
-      {/* 7. FOOTER */}
+      {/* 7. FOOTER (Dark #0D0D1A) */}
       <Footer />
     </div>
   );

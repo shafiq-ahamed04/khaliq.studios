@@ -33,6 +33,7 @@ export default function Services() {
 
   return (
     <section 
+      data-theme="light"
       id="services"
       className="relative w-full bg-[#EEEAE1] text-[#1B1B1B] py-24 sm:py-32 lg:py-36 border-t border-[#1B1B1B]/10"
     >

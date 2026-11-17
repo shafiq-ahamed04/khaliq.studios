@@ -28,6 +28,7 @@ export default function Contact() {
 
   return (
     <section 
+      data-theme="dark"
       id="contact"
       className="relative w-full bg-[#0D0D1A] text-[#F5F4F0] py-28 sm:py-36 lg:py-40 overflow-hidden"
     >
