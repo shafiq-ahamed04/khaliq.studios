@@ -111,7 +111,7 @@ export default function SelectedWork() {
                 </div>
 
                 <div className="relative z-10">
-                  <span className="text-5xl font-editorial font-bold text-white/15 block select-none">
+                  <span className="text-5xl font-extrabold text-white/15 block select-none">
                     {project.id}
                   </span>
                   <div className="text-2xl sm:text-3xl font-medium text-white tracking-tight mt-1">

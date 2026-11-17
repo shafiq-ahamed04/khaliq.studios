@@ -43,9 +43,9 @@ export default function Philosophy() {
 
         {/* Single large centered quote */}
         <div className="max-w-4xl mx-auto text-center mb-20 sm:mb-24">
-          <blockquote className="font-editorial text-4xl sm:text-6xl md:text-7xl font-normal text-[#1B1B1B] leading-[1.1] sm:leading-[1.08] tracking-tight">
+          <blockquote className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#1B1B1B] leading-[1.1] tracking-tight">
             “We don't build pages.<br />
-            <span className="text-[#2D3480] italic">We build systems.</span>”
+            <span className="text-[#2D3480]">We build systems.</span>”
           </blockquote>
 
           <p className="mt-8 text-lg sm:text-xl md:text-2xl font-sans text-[#5A5A6E] max-w-2xl mx-auto leading-relaxed font-normal">

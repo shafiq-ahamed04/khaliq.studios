@@ -10,7 +10,7 @@ Premium portfolio website for **Khaliq Studios**, a digital services agency base
 
 - **Framework**: React 18 + Vite
 - **Styling**: Tailwind CSS
-- **Typography**: Playfair Display, Cormorant Garamond, Inter, Space Mono
+- **Typography**: Manrope, Space Mono
 - **Animations**: GSAP (GreenSock) + ScrollTrigger
 - **Smooth Inertia Scrolling**: Lenis
 - **Icons**: Lucide React + Custom SVG Architectural Emblems

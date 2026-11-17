@@ -96,7 +96,7 @@ export default function Hero() {
             <span className="hero-animate-title block text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F5F4F0] to-[#B0B0C4]">
               Businesses Ready
             </span>
-            <span className="hero-animate-title block text-[#F5A623] italic font-serif">
+            <span className="hero-animate-title block text-[#F5A623]">
               To Move.
             </span>
           </h1>

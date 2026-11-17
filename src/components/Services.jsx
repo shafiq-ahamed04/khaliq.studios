@@ -116,11 +116,11 @@ export default function Services() {
                 <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
               </div>
 
-              <h4 className="text-3xl sm:text-4xl font-normal font-serif text-[#F5F4F0] mb-3">
+              <h4 className="text-3xl sm:text-4xl font-bold text-[#F5F4F0] mb-3 tracking-tight">
                 {services[activeService].title}
               </h4>
 
-              <p className="font-editorial italic text-lg text-[#F5A623] mb-4">
+              <p className="text-lg text-[#F5A623] mb-4 font-semibold">
                 "{services[activeService].subtitle}"
               </p>
 

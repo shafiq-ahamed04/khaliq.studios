@@ -50,7 +50,7 @@ export default function Contact() {
             <div className="lg:col-span-8">
               <h2 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight text-[#F5F4F0] leading-[1.02]">
                 Ready to build your<br />
-                <span className="text-[#F5A623] italic font-serif">digital system?</span>
+                <span className="text-[#F5A623]">digital system?</span>
               </h2>
 
               <p className="mt-6 text-lg sm:text-xl text-[#C0C0D4] max-w-xl leading-relaxed">

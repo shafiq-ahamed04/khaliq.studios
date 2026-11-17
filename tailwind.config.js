@@ -38,9 +38,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Manrope"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Manrope"', 'system-ui', 'sans-serif'],
         display: ['"Manrope"', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Manrope"', 'sans-serif'],
         mono: ['"Space Mono"', 'monospace'],
       },
       borderRadius: {

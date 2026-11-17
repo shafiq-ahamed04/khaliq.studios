@@ -93,7 +93,7 @@ export default function Preloader({ onComplete }) {
           KHALIQ <span className="text-[#F5A623]">STUDIOS</span>
         </h2>
 
-        <p className="font-editorial italic text-base sm:text-xl text-[#A0A0B0] max-w-lg mb-2">
+        <p className="text-base sm:text-lg text-[#C0C0D4] max-w-lg mb-2 font-medium">
           “Digital systems for businesses ready to move.”
         </p>
 
@@ -103,7 +103,7 @@ export default function Preloader({ onComplete }) {
 
         {/* Large Counter */}
         <div className="mt-6 sm:mt-8 flex items-baseline gap-1">
-          <span className="font-editorial text-5xl sm:text-7xl font-bold text-[#F5F4F0] tabular-nums tracking-tighter">
+          <span className="text-5xl sm:text-7xl font-extrabold text-[#F5F4F0] tabular-nums tracking-tighter">
             {count < 10 ? `0${count}` : count}
           </span>
           <span className="text-[#F5A623] font-mono-code text-lg sm:text-xl font-bold">
