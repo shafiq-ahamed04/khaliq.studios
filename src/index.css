@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Non-negotiable: Zero rounded corners anywhere */
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+    /* Managed by Lenis for ultra-fluid inertia */
+    background-color: #0D0D1A;
+    color: #F5F4F0;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Clean, discreet standard scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D0D1A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2D3480;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F5A623;
+  }
+
+  ::selection {
+    background-color: #F5A623;
+    color: #0D0D1A;
+  }
+}
+
+/* Luxury Editorial Typography utilities */
+.font-editorial {
+  font-family: 'Playfair Display', Cormorant Garamond, Georgia, serif;
+}
+
+.font-editorial-alt {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Subtle Film Grain Texture Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Hero subtle diagonal gradient bleeding from bottom-right */
+.hero-gradient-bleed {
+  background: radial-gradient(circle at 100% 100%, rgba(245, 166, 35, 0.08) 0%, rgba(45, 52, 128, 0.12) 35%, rgba(13, 13, 26, 0) 70%);
+}
+
+/* Gentle scroll prompt animation (subtle bounce, no aim crosshair) */
+@keyframes subtleBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-subtle-bounce {
+  animation: subtleBounce 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
